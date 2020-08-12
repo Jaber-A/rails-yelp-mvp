@@ -10,12 +10,13 @@
 # category = ["chinese", "italian", "japanese", "french", "belgian"]
 
 7.times do
-  name = Faker::Restaurant.name 
-  adress = Faker::Address.street_address
-  category = "italian" 
+  name = Faker::Restaurant.name
+  phone_number = Faker::PhoneNumber.phone_number 
+  address = Faker::Address.street_address
+  category = ["chinese", "italian", "japanese", "french", "belgian"].sample
 
   Restaurant.create(name: name, address: address, category: category, )
-  puts "Restaurant #{name} created"
+  puts "Restaurant #{name} #{address} #{category} created"
 end
 
 puts "All restaurants created"
